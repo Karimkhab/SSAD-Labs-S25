@@ -28,10 +28,10 @@ public:
         return age;
     }
 
-    virtual ~Animal() {} // Виртуальный деструктор
+    virtual ~Animal() {}
 };
 
-class LandAnimal : virtual public Animal { // Виртуальное наследование
+class LandAnimal : virtual public Animal {
 public:
     LandAnimal(string name, int age) : Animal(name, age) {}
 
@@ -44,7 +44,7 @@ public:
     }
 };
 
-class WaterAnimal : virtual public Animal { // Виртуальное наследование
+class WaterAnimal : virtual public Animal {
 public:
     WaterAnimal(string name, int age) : Animal(name, age) {}
 
@@ -59,7 +59,7 @@ public:
 
 class Lion : public LandAnimal {
 public:
-    Lion(string name, int age) : Animal(name, age), LandAnimal(name, age) {} // <-- Добавлено Animal(name, age)
+    Lion(string name, int age) : Animal(name, age), LandAnimal(name, age) {}
 
     void makeSound() override {
         cout << "I am " << getName() << " and I am a land animal!\n"
@@ -73,7 +73,7 @@ public:
 
 class Dolphin : public WaterAnimal {
 public:
-    Dolphin(string name, int age) : Animal(name, age), WaterAnimal(name, age) {} // <-- Добавлено Animal(name, age)
+    Dolphin(string name, int age) : Animal(name, age), WaterAnimal(name, age) {}
 
     void makeSound() override {
         cout << "I am " << getName() << " and I am a water animal!\n"
